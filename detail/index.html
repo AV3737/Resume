@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: auto;
+      min-height: 100%;
+      overflow-y: auto;
+      background: #f0f4f8;
+    }
+
+    .container {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-bottom: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 15px;
+      font-size: 40px;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 400px;
+      padding: 16px 22px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    .search-box input:focus {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-bottom: 20px;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 20px 10px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .box img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: auto;
+      margin-bottom: 14px;
+    }
+
+    .box-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #005f8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-height: 750px) {
+      .box img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .box-title {
+        font-size: 16px;
+      }
+
+      .search-box input {
+        width: 320px;
+        padding: 12px 18px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .box img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .box-title {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .box img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .box-title {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Services</h1>
+    <div class="search-box">
+      <input type="text" placeholder="🔍 Search a service...">
+    </div>
+    <div class="grid">
+      <div class="box"><img src="/assets/r.webp"><div class="box-title">Rent Agreement&Notary Services</div></div>
+            <div class="box"><img src="assets/fssai.png"><div class="box-title">Food Licence</div></div>
+      <div class="box"><img src="assets/gu.jpg"><div class="box-title">Gumasta Licence</div></div>
+      <div class="box"><img src="assets/ud.jpg"><div class="box-title">Udyam Aadhaar</div></div>
+      <div class="box"><img src="assets/es.webp"><div class="box-title">E-Shram</div></div>
+      <div class="box"><img src="assets/pcc.jpg"><div class="box-title">Police Clierence Certificate (PCC)</div></div>
+      <div class="box"><img src="assets/sr.jpg"><div class="box-title">Senior Citizen Card</div></div>
+      <div class="box"><img src="assets/ay.png"><div class="box-title">Ayushman Card</div></div>
+      <div class="box"><img src="/assets/e.png"><div class="box-title">EPFO</div></div>
+      <div class="box"><img src="/assets/d.webp"><div class="box-title">Dog Licence</div></div>
+      <div class="box"><img src="/assets/m.jpg"><div class="box-title">Mhada Lottery</div></div>
+      <div class="box"><img src="assets/ll.jpg"><div class="box-title">All Type Of Insurance</div></div>
+      <div class="box"><img src="assets/li.webp"><div class="box-title">Light Bill (All Services)</div></div>
+      <div class="box"><img src="assets/cd.jpg"><div class="box-title">Credit Card Service</div></div>
+      <div class="box"><img src="assets/bank.jpg"><div class="box-title">Open Bank Account</div></div>
+      <div class="box"><img src="assets/for.jpg"><div class="box-title">All Types Of Form Filling</div></div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</body>
+<script>
+  const searchInput = document.querySelector('.search-box input');
+  const boxes = document.querySelectorAll('.box');
+
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    boxes.forEach(box => {
+      const title = box.querySelector('.box-title').textContent.toLowerCase();
+      if (title.includes(searchTerm)) {
+        box.style.display = 'flex';
+      } else {
+        box.style.display = 'none';
+      }
+    });
+  });
+</script>
+</html>
